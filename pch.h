@@ -10,4 +10,27 @@
 // 여기에 미리 컴파일하려는 헤더 추가
 #include "framework.h"
 
+#include "SerialComm.h"
+#include <vector>
+#include "opencv2\opencv.hpp"
+#include <thread>
+#include <mutex>
+#include <chrono>
+#include <deque>
+#include <dshow.h>
+#include <comdef.h>
+#include <algorithm>
+#include <string>
+#include "NIDAQmx.h"
+#include <atomic>
+
+#define IDC_AUTO_COMPLETED (WM_USER + 100)
+#define IDC_AUTO_CLEANUP (WM_USER + 101)
+#define WM_AUTO_STATUS_UPDATE (WM_USER + 102)
+
+#define WM_SERIAL_RECEIVED (WM_USER + 200)
+
+#define WM_CAMERA_INIT_COMPLETE (WM_USER + 300)
+#define WM_DAQ_INIT_COMPLETE (WM_USER + 301)
+
 #endif //PCH_H
