@@ -1,5 +1,6 @@
 ﻿
 // LN_Console_20260106Dlg.h: 헤더 파일
+// 2026 01 21 latest update
 //
 
 #pragma once
