@@ -32,7 +32,7 @@ public:
 protected:
 	DECLARE_MESSAGE_MAP()
 public:
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
+//	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
@@ -2251,20 +2251,20 @@ void CLNConsole20260106Dlg::OnBnClickedDaqUnit()
 }
 
 
-BOOL CAboutDlg::PreTranslateMessage(MSG* pMsg)
-{
+//BOOL CAboutDlg::PreTranslateMessage(MSG* pMsg)
+//{
 	// ESC 키 차단
-	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_ESCAPE) {
-		return TRUE;  // 메시지 처리함 (무시)
-	}
-
+//	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_ESCAPE) {
+//		return TRUE;  // 메시지 처리함 (무시)
+//	}
+//
 	// Enter 키 차단
-	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN) {
-		return TRUE;  // 메시지 처리함 (무시)
-	}
-
-	return CDialogEx::PreTranslateMessage(pMsg);
-}
+//	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN) {
+//		return TRUE;  // 메시지 처리함 (무시)
+//	}
+//
+//	return CDialogEx::PreTranslateMessage(pMsg);
+//}
 
 void CLNConsole20260106Dlg::OnBnClickedSavePath()
 {
@@ -3351,4 +3351,20 @@ LRESULT CLNConsole20260106Dlg::OnAutoStatusUpdate(WPARAM wParam, LPARAM lParam)
 
 	delete pStr; // MOD
 	return 0;
+}
+
+BOOL CLNConsole20260106Dlg::PreTranslateMessage(MSG* pMsg)
+{
+	// ESC 키 차단
+	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_ESCAPE) {
+		return TRUE;  // 메시지 처리함 (무시)
+	}
+
+	// Enter 키 차단
+	if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN) {
+		return TRUE;  // 메시지 처리함 (무시)
+	}
+
+
+	return CDialogEx::PreTranslateMessage(pMsg);
 }

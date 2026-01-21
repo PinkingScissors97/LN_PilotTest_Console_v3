@@ -388,4 +388,5 @@ public:
 	afx_msg LRESULT OnAutoStatusUpdate(WPARAM wParam, LPARAM lParam);
 
 	std::atomic<bool> m_bIsUIShuttingDown{ false };
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
